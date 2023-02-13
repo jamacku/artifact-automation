@@ -23,9 +23,11 @@ jobs:
         uses: jamacku/download-artifact@first-version
         with:
           name: README as Artifact
+      
+      - run: cat "$GITHUB_OUTPUT"
 
-      - name: Log Artifact data
-        run: |
-          echo "::warning::${{ steps.Artifact.outputs.metadata }}"
+      # - name: Log Artifact data
+      #   run: |
+      #     echo "::warning::${{ steps.Artifact.outputs["README.md"] }}"
 
 ...
